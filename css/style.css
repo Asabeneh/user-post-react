@@ -42,9 +42,8 @@ textarea:hover {
 
 .post {
   background: rgb(226, 232, 235); 
-
   margin: 10px 0px;
-  padding: 2px 20px;
+  padding: 0 10px;
   box-shadow: 1px 1px 3px 2px rgb(146, 208, 240);
 }
 .post:hover {
@@ -118,6 +117,7 @@ i{
 .fa-retweet:hover {
     color: rgb(33, 193, 105);
 }
+
 form p {
   float:right;
   margin:0;
@@ -130,4 +130,14 @@ form p {
 }
 span {
   color:rgb(135, 150, 162);
+  font-size:14px;
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding:0;
+}
+.fa-user {
+  font-size:25px;
 }

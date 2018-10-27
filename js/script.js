@@ -115,9 +115,13 @@ class Post extends React.Component {
   };
   renderPost = () => {
     return <div className="post">
-        <h4>
-          {this.props.user} <span>@{this.props.user}</span>
-        </h4>
+        <div className = "user-info">
+          <i className="fas fa-user" />
+          <h4>
+            {this.props.user} <span>@{this.props.user}</span>
+          </h4>
+        </div>
+
         <div className="post-text">
           <p>{this.props.children}</p>
         </div>
