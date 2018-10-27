@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    color:#333;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+form button {
+  width: 100px;
+  height: 40px;
+  margin-left: 15px;
+  background: rgb(29, 161, 242);
+}
+textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: #555;
+  background: rgb(252, 248, 243);
+  padding:15px;
+}
+textarea:focus,
+textarea:hover {
+  box-shadow: 1px 1px 3px 2px rgb(146, 208, 240);
+}
+
+.wrapper {
+  width: 95%;
+  margin: auto;
+  border: 2px solid rgba(243, 213, 201, 0.25);
+  border-radius: 3px;
+  padding: 10px;
+  padding: 50px;
+}
+
+.post {
+  background: rgb(226, 232, 235); 
+
+  margin: 10px 0px;
+  padding: 2px 20px;
+  box-shadow: 1px 1px 3px 2px rgb(146, 208, 240);
+}
+.post:hover {
+  -webkit-transform: scaleY(1.005);
+  transform: scaleY(1.005);
+}
+input {
+  width: 50%;
+  height: 30px;
+}
+
+button {
+  border: none;
+  outline: none;
+  margin: 2px;
+  width: 60px;
+  height: 30px;
+  color: white;
+  border-radius: 3px;
+  font-weight: lighter;
+}
+.edit-button {
+  background: rgb(146, 208, 240);
+}
+
+.delete-button {
+  background: rgb(250, 115, 115);
+}
+.save-button {
+  background: rgb(16, 157, 228);
+}
+.cancel-button {
+  background: gray;
+}
+
+.post-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+small {
+  font-size: 10px;
+  font-weight: 100;
+}
+.fa-edit{
+    color:rgb(146, 208, 240);;
+}
+.fa-edit:hover{
+    color:rgb(33, 162, 242);
+}
+.fa-trash-alt{
+    color:rgba(250, 115, 115,0.5);
+}
+.fa-trash-alt:hover{
+    color:rgb(199, 62, 62);
+}
+.fa-save{
+    color:rgb(177, 105, 177);
+}
+i{
+    margin:10px;
+    color:rgb(105, 122, 137);
+}
+
+ .fa-comment:hover {
+     color:rgb(33, 162, 242);
+ }
+ .fa-heart:hover, .fa-heart:active{
+     color:rgb(228, 77, 124);
+ }
+.fa-retweet:hover {
+    color: rgb(33, 193, 105);
+}
+form p {
+  float:right;
+  margin:0;
+  color:rgb(33, 162, 242);
+  font-size:12px;
+}
+
+.disabledButton {
+  color:rgb(240, 80, 80);
+}
+span {
+  color:rgb(135, 150, 162);
+}
