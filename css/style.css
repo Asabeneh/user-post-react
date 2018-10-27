@@ -10,12 +10,19 @@ form {
   display: flex;
   align-items: center;
 }
-form button {
+.activeButton {
   width: 100px;
   height: 40px;
   margin-left: 15px;
   background: rgb(29, 161, 242);
 }
+.disabledButton {
+  width: 100px;
+  height: 40px;
+  margin-left: 15px;
+   background: rgb(146, 208, 240);
+}
+
 textarea {
   width: 100%;
   height: 100px;
@@ -36,19 +43,19 @@ textarea:hover {
   margin: auto;
   border: 2px solid rgba(243, 213, 201, 0.25);
   border-radius: 3px;
-  padding: 10px;
-  padding: 50px;
+  padding: 25px;
+
 }
 
 .post {
   background: rgb(226, 232, 235); 
-  margin: 10px 0px;
+  margin: 15px 0px;
   padding: 0 10px;
   box-shadow: 1px 1px 3px 2px rgb(146, 208, 240);
 }
 .post:hover {
-  -webkit-transform: scaleY(1.005);
-  transform: scaleY(1.005);
+  -webkit-transform: scaleY(1.025);
+  transform: scaleY(1.025);
 }
 input {
   width: 50%;
@@ -125,9 +132,7 @@ form p {
   font-size:12px;
 }
 
-.disabledButton {
-  color:rgb(240, 80, 80);
-}
+
 span {
   color:rgb(135, 150, 162);
   font-size:14px;
@@ -140,4 +145,24 @@ span {
 }
 .fa-user {
   font-size:25px;
+  border:2px solid rgb(135, 150, 162);
+  padding:8px;
+  border-radius:50%;
 }
+p {
+  margin:0;
+}
+.red-text {
+  color:rgb(233, 64, 64);
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+    padding:0;
+    margin: 0;
+  }
+  textarea {
+    height:60px;
+  }
+} 

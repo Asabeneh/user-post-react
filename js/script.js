@@ -55,7 +55,7 @@ class AddPost extends React.Component {
     return <form onSubmit={this.handleSubmit}>
         <div>
           <textarea cols="90" rows="10" type="text" name="Post" placeholder="Enter Post" ref="Post" value={this.state.text} onChange={this.handleChange} />
-          <p className={buttonClass}>{wordCount}</p>
+          <p className={!activeButton ? "red-text" : "other"}>{wordCount}</p>
         </div>
         <div>
           <button className={buttonClass} disabled={!activeButton}>
@@ -118,7 +118,7 @@ class Post extends React.Component {
         <div className = "user-info">
           <i className="fas fa-user" />
           <h4>
-            {this.props.user} <span>@{this.props.user}</span>
+            {this.props.user} <span>@{this.props.firstName}</span>
           </h4>
         </div>
 
@@ -154,7 +154,7 @@ class Posts extends React.Component {
         {
           id: randomId(),
           date: displayDateTime(),
-          user: "Asabeneh",
+          user: "Asabeneh Yetayeh",
           post:
             "I just released my first React tutorial on YouTube. I hope it will help some people to get started React.js. If you like what you got on this channel subscribe for more videos and share to your friends.",
           postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
@@ -162,7 +162,7 @@ class Posts extends React.Component {
         {
           id: randomId(),
           date: displayDateTime(),
-          user: "Asabeneh",
+          user: "Asabeneh Yetayeh",
           post:
             "To get started React, you should to know about HTML, CSS and JavaScript. If don't have to be a JavaScript ninja to start learning React. If you like to learn JavaScript. Check the JavaScript Tutorial on Washara Academy.",
           postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
@@ -170,7 +170,7 @@ class Posts extends React.Component {
         {
           id: randomId(),
           date: displayDateTime(),
-          user: "Asabeneh",
+          user: "Asabeneh Yetayeh",
           post:
             "I love teaching and I love to teach, I will teach everything I knew. If you are good at somethng why not teaching to someone. When you teach you learn more.",
           postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
@@ -178,7 +178,7 @@ class Posts extends React.Component {
         {
           id: randomId(),
           date: displayDateTime(),
-          user: "Asabeneh",
+          user: "Asabeneh Yetayeh",
           post:
             "For more videos about HTML, CSS, JavaScript, React, Node.js, MongoDB and Pyton checkout Washera Academy. Project based tutorials on different topics will be released on Washera Academy.",
           postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
@@ -223,6 +223,7 @@ class Posts extends React.Component {
   eachPost = () => {
     return this.state.posts.map((postObj, i) => {
       let { id, date, post,user} = postObj;
+      let firstName = user.split(' ')[0];
       return (
         <Post
           key={"id" + i}
@@ -232,6 +233,7 @@ class Posts extends React.Component {
           id={id}
           date={date}
           user = {user}
+          firstName = {firstName}
         >
           {post}
         </Post>
