@@ -48,9 +48,9 @@ class AddPost extends React.Component {
   };
   render() {
     let wordCount = 250 - this.state.text.length;
-    let activeButton = wordCount >= 0;
+    let buttonStatus = wordCount < 250;
 
-    let buttonClass = activeButton ? "activeButton" : "disabledButton";
+    let buttonClass = buttonStatus ? "activeButton" : "disabledButton";
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -65,10 +65,10 @@ class AddPost extends React.Component {
             value={this.state.text}
             onChange={this.handleChange}
           />
-          <p className={!activeButton ? "red-text" : "other"}>{wordCount}</p>
+          <p className={wordCount < 0 ? "red-text" : "other"}>{wordCount}</p>
         </div>
         <div>
-          <button className={buttonClass} disabled={!activeButton}>
+          <button className={buttonClass} disabled={!buttonStatus}>
             Add Post
           </button>
         </div>
