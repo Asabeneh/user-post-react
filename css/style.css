@@ -105,7 +105,8 @@ small {
     color:rgb(33, 162, 242);
 }
 .fa-trash-alt{
-    color:rgba(250, 115, 115,0.5);
+    /* color:rgba(250, 115, 115,0.5); */
+     color:rgb(146, 208, 240);;
 }
 .fa-trash-alt:hover{
     color:rgb(199, 62, 62);
