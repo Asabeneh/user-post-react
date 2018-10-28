@@ -48,7 +48,7 @@ class AddPost extends React.Component {
   };
   render() {
     let wordCount = 250 - this.state.text.length;
-    let buttonStatus = wordCount < 250;
+    let buttonStatus = wordCount < 250  && wordCount > 0;
 
     let buttonClass = buttonStatus ? "activeButton" : "disabledButton";
 
