@@ -2,8 +2,10 @@
   box-sizing: border-box;
 }
 body{
-    font-family: 'Lato', sans-serif;
-    color:#333;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color:#333;
+  font-size:110%;
 }
 
 form {
@@ -51,7 +53,7 @@ textarea:hover {
   background: rgb(226, 232, 235); 
   margin: 15px 0px;
   padding: 0 10px;
-  box-shadow: 1px 1px 3px 2px rgb(146, 208, 240);
+  box-shadow: 1px 1px 3px 1px rgb(146, 208, 240);
 }
 .post:hover {
   -webkit-transform: scaleY(1.025);
@@ -161,8 +163,13 @@ p {
     width: 100%;
     padding:0;
     margin: 0;
+    border:none;
   }
   textarea {
     height:60px;
+  }
+  .post {
+    word-wrap: break-word;
+
   }
 } 

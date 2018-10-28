@@ -48,13 +48,23 @@ class AddPost extends React.Component {
   };
   render() {
     let wordCount = 250 - this.state.text.length;
-    let activeButton = wordCount >= 0
- 
-    let buttonClass = activeButton ? 'activeButton' : 'disabledButton';
-  
-    return <form onSubmit={this.handleSubmit}>
+    let activeButton = wordCount >= 0;
+
+    let buttonClass = activeButton ? "activeButton" : "disabledButton";
+
+    return (
+      <form onSubmit={this.handleSubmit}>
         <div>
-          <textarea cols="90" rows="10" type="text" name="Post" placeholder="Enter Post" ref="Post" value={this.state.text} onChange={this.handleChange} />
+          <textarea
+            cols="90"
+            rows="10"
+            type="text"
+            name="Post"
+            placeholder="Enter Post"
+            ref="Post"
+            value={this.state.text}
+            onChange={this.handleChange}
+          />
           <p className={!activeButton ? "red-text" : "other"}>{wordCount}</p>
         </div>
         <div>
@@ -62,7 +72,8 @@ class AddPost extends React.Component {
             Add Post
           </button>
         </div>
-      </form>;
+      </form>
+    );
   }
 }
 
@@ -114,8 +125,9 @@ class Post extends React.Component {
     );
   };
   renderPost = () => {
-    return <div className="post">
-        <div className = "user-info">
+    return (
+      <div className="post">
+        <div className="user-info">
           <i className="fas fa-user" />
           <h4>
             {this.props.user} <span>@{this.props.firstName}</span>
@@ -139,7 +151,8 @@ class Post extends React.Component {
             <small>{this.props.date}</small>
           </div>
         </div>
-      </div>;
+      </div>
+    );
   };
   render() {
     return !this.state.editing ? this.renderPost() : this.renderForm();
@@ -155,16 +168,21 @@ class Posts extends React.Component {
           id: randomId(),
           date: displayDateTime(),
           user: "Asabeneh Yetayeh",
-          post:
-            "I just released my first React tutorial on YouTube. I hope it will help some people to get started React.js. If you like what you got on this channel subscribe for more videos and share to your friends.",
+          post:'Welcome to Washera Academy! This is a CRUD React tutorial. In this tutorial, you will learn most part of react by implementing  the CRUD(Create, Read, Update and Delete) operations in this mini project.',
           postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
         },
         {
           id: randomId(),
           date: displayDateTime(),
           user: "Asabeneh Yetayeh",
-          post:
-            "To get started React, you should to know about HTML, CSS and JavaScript. If don't have to be a JavaScript ninja to start learning React. If you like to learn JavaScript. Check the JavaScript Tutorial on Washara Academy.",
+          post:"I just released my first React tutorial on YouTube. I hope it will help some people to get started React.js. If you like what you got on this channel subscribe for more videos and share to your friends.",
+          postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
+        },
+        {
+          id: randomId(),
+          date: displayDateTime(),
+          user: "Asabeneh Yetayeh",
+          post:"To get started React, you should to know about HTML, CSS and JavaScript. If don't have to be a JavaScript ninja to start learning React. If you like to learn JavaScript. Check the JavaScript Tutorial on Washara Academy.",
           postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
         },
         {
@@ -179,8 +197,7 @@ class Posts extends React.Component {
           id: randomId(),
           date: displayDateTime(),
           user: "Asabeneh Yetayeh",
-          post:
-            "For more videos about HTML, CSS, JavaScript, React, Node.js, MongoDB and Pyton checkout Washera Academy. Project based tutorials on different topics will be released on Washera Academy.",
+          post:"For more videos about HTML, CSS, JavaScript, React, Node.js, MongoDB and Pyton checkout Washera Academy. Project based tutorials on different topics will be released on Washera Academy.",
           postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
         }
       ],
@@ -192,7 +209,16 @@ class Posts extends React.Component {
     let date = displayDateTime();
     if (text.length) {
       this.setState({
-        posts: [...this.state.posts, { id, date, post: text }]
+        posts: [
+          ...this.state.posts,
+          {
+            id,
+            date,
+            post: text,
+            user: "Anonymous User",
+            postInfo: [{ comment: 0 }, { repost: 0 }, { hearts: 0 }]
+          }
+        ]
       });
     }
   };
@@ -222,8 +248,8 @@ class Posts extends React.Component {
   };
   eachPost = () => {
     return this.state.posts.map((postObj, i) => {
-      let { id, date, post,user} = postObj;
-      let firstName = user.split(' ')[0];
+      let { id, date, post, user } = postObj;
+      let firstName = user.split(" ")[0];
       return (
         <Post
           key={"id" + i}
@@ -232,8 +258,8 @@ class Posts extends React.Component {
           index={i}
           id={id}
           date={date}
-          user = {user}
-          firstName = {firstName}
+          user={user}
+          firstName={firstName}
         >
           {post}
         </Post>
